@@ -1,13 +1,19 @@
 import SearchBar from "./components/SearchBar";
 import searchImages from "./api";
+import React from "react";
+import { useState } from "react";
 
 function App() {
-  const handleSubmit = (term) => {
-    searchImages(term);
+  const [term, setTerm] = useState("");
+  const handleChange = (event) => {
+    setTerm(event.target.value);
   };
   return (
     <div>
-      <SearchBar onSubmit={handleSubmit} />
+      <div>Enter Some text</div>
+      <input onChange={handleChange} />
+      <h3>Your Text</h3>
+      <p>{term}</p>
     </div>
   );
 }
