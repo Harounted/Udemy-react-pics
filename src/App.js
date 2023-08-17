@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <div>Enter Some text</div>
-      <input onChange={handleChange} />
+      <input value={term} onChange={handleChange} />
       <h3>Your Text</h3>
       <p>{term}</p>
     </div>
