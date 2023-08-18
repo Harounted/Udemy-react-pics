@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function SearchBar({ onSubmit }) {
   const [term, setTerm] = useState("");
-  console.log(term);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +16,7 @@ function SearchBar({ onSubmit }) {
     <div>
       <form onSubmit={handleFormSubmit}>
         <input value={term} onChange={handleChange} />
+        {/* <button onClick={handleFormSubmit}>Search</button> */}
       </form>
     </div>
   );
