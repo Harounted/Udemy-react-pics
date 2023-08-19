@@ -1,7 +1,12 @@
 import { useState } from "react";
-
+import "./ImageList.css";
+import ImageShow, { imageShow } from "./ImageShow";
 function ImageList({ images }) {
-  return <div>number of images found: {images.length}</div>;
+  const renderedImages = images.map((image) => {
+    return <ImageShow key={image.id} image={image} />;
+  });
+
+  return <div className="image-list">{renderedImages}</div>;
 }
 
 export default ImageList;
